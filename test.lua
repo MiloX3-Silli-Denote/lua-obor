@@ -2,8 +2,8 @@ local Obor = require("obor");
 
 local Math = Obor:extend(); -- class container
 
-local Vec = Math:extend();     -- object
-local Mat = Math:extend();     -- object
+local Vec = Math:extend();      -- object
+local Mat = Math:extend();      -- object
 local Triangle = Math:extend(); -- object
 
 function Vec:new(x, y)
