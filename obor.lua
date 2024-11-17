@@ -1,29 +1,32 @@
---! do not remove this, credit is asked to be given
 --[[
 
-https://github.com/MiloX3-Silli-Denote/lua-obor
+________________________________________________________________________________________________________________________
 
-MIT License
+?   https://github.com/MiloX3-Silli-Denote/lua-obor
 
-Copyright (c) 2024 Milo:3 Silli Denote
+?   MIT License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+?   Copyright (c) 2024 Milo:3 Silli Denote
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+*   Permission is hereby granted, free of charge, to any person obtaining a copy
+*   of this software and associated documentation files (the "Software"), to deal
+*   in the Software without restriction, including without limitation the rights
+*   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*   copies of the Software, and to permit persons to whom the Software is
+*   furnished to do so, subject to the following conditions:
+*
+*   The above copyright notice and this permission notice shall be included in all
+*   copies or substantial portions of the Software.
+*
+*   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+*   SOFTWARE.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+________________________________________________________________________________________________________________________
 
 ]]
 
@@ -32,7 +35,7 @@ local Obor = {};
 Obor.__index = Obor;
 
 --? check if object is a userdata or a table
-function isData(obj)
+local function isData(obj)
     local tp = type(obj);
 
     return tp == "userdata" or tp == "table";
@@ -63,7 +66,6 @@ function is(a, b)
     return false; -- a was not a subobject of b
 end
 
-
 --! NOT TO BE OVERWRITTEN
 function Obor:__call(...) -- metamethod
     if not self.__super then
@@ -80,7 +82,6 @@ end
 
 -- default :new() function to prevent crashing when not redefined
 function Obor:new() -- meant to be overwritten
-    return self;
 end
 
 --? create a new object that returns true when is() is called comparing new object to current
